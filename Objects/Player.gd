@@ -4,6 +4,11 @@ export var walk_speed = 14
 export var turn_speed = 2
 export var fall_acceleration = 75
 
+func get_class():
+	return "Player"
+
+func is_class(name):
+	return name == "Player"
 
 func _physics_process(delta):
 	var velocity = Vector3.ZERO
@@ -22,3 +27,6 @@ func _physics_process(delta):
 	velocity.y -= fall_acceleration * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
 	rotate_y(turn * turn_speed * delta)
+
+func hit():
+	print("auwch")
