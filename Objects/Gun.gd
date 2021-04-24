@@ -3,13 +3,14 @@ extends Spatial
 onready var bullet_resource : Resource = load("res://Objects/bullet.tscn")
 
 func aim(target_type):
+	$AnimationPlayer.play("Aiming")
 	$AimVolume.visible = true
 	rotation.x = 0
 	rotation.y = 0
 	for body in $ScanningZone.get_overlapping_bodies():
 		if body.is_class(target_type):
 			look_at(body.global_transform.origin + Vector3.UP, Vector3.UP)
-	$AnimationPlayer.play("Aiming")
+	$AnimationPlayer.play("AimGun")
 
 func cancel_aim():
 	$AimVolume.visible = false
@@ -18,7 +19,6 @@ func shoot():
 	$AnimationPlayer.stop()
 	$AimVolume.visible = false
 	var max_offset = atan($AimVolume.radius/$AimVolume.height)
-	print(max_offset)
 	rotate_x(rand_range(-max_offset, max_offset))
 	rotate_y(rand_range(-max_offset, max_offset))
 	$AnimationPlayer.play("Shoot")

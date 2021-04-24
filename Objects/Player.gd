@@ -10,23 +10,38 @@ func get_class():
 func is_class(name):
 	return name == "Player"
 
+func _process(_delta):
+	if Input.is_action_just_pressed("command_fire"):
+		$BelgVisual/Animations.play("Aim")
+		for body in $SwordRange.get_overlapping_bodies():
+			if body.is_class("Enemy"):
+				body.die()
+		yield($BelgVisual/Animations, "animation_finished")
+		$BelgVisual/Animations.play("Idle")
+
 func _physics_process(delta):
 	var velocity = Vector3.ZERO
 	var forward = 0
 	var turn = 0
-	
+	var animation = "Walk"
 	if Input.is_action_pressed("move_right"):
 		turn -= 1
-	if Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left"):
 		turn += 1
-	if Input.is_action_pressed("move_back"):
+	elif Input.is_action_pressed("move_back"):
 		forward += 1
-	if Input.is_action_pressed("move_forward"):
+	elif Input.is_action_pressed("move_forward"):
 		forward -= 1
+	elif $BelgVisual/Animations.current_animation != "Idle":
+		animation = "Idle"
+	if $BelgVisual/Animations.current_animation != animation:
+		$BelgVisual/Animations.play(animation)
 	velocity += forward * walk_speed * transform.basis.z.normalized()
 	velocity.y -= fall_acceleration * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
 	rotate_y(turn * turn_speed * delta)
+	
+		
 
 func hit():
 	print("auwch")

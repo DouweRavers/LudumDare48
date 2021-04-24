@@ -23,11 +23,14 @@ func _process(delta):
 		is_aiming = !is_aiming
 		if is_aiming:
 			$Gun.aim("Enemy")
+			$BelgVisual/Animations.play("Aim")
 		else:
 			$Gun.cancel_aim()
+			$BelgVisual/Animations.play("Idle")
 	if Input.is_action_just_pressed("command_fire") && is_aiming:
 		$Gun.shoot()
-		is_aiming = false
+		$BelgVisual/Animations.play("Shoot")
+
 
 func _physics_process(delta):
 	if is_aiming:
@@ -41,13 +44,24 @@ func _physics_process(delta):
 			move_and_slide(direction.normalized() * speed, Vector3.UP)
 	else:
 		global_transform.basis = target.global_transform.basis
+		$BelgVisual/Animations.play("Idle")
 
 func _on_Timer_timeout():
 	move_to(target.global_transform.origin)
 
 func move_to(pos):
-	path = nav.get_simple_path(global_transform.origin, pos)
-	path_node = 0
+	if not is_aiming:
+		$BelgVisual/Animations.play("Walk")
+		path = nav.get_simple_path(global_transform.origin, pos)
+		path_node = 0
 
 func die():
+	$Gun.visible = false
+	$BelgVisual/Animations.play("Die")
+	yield($BelgVisual/Animations, "animation_finished")
 	queue_free()
+
+
+func _on_Animations_animation_finished(anim_name):
+	if anim_name == "Shoot":
+		is_aiming = false

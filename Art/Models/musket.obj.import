@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/musket.obj-ab11213aed8aea7a6ef83bf6c207e50e.mesh"
+
+[deps]
+
+files=[ "res://.import/musket.obj-ab11213aed8aea7a6ef83bf6c207e50e.mesh" ]
+
+source_file="res://Art/Models/musket.obj"
+dest_files=[ "res://.import/musket.obj-ab11213aed8aea7a6ef83bf6c207e50e.mesh", "res://.import/musket.obj-ab11213aed8aea7a6ef83bf6c207e50e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.2, 0.2, 0.2 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

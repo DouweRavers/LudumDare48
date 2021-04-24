@@ -1,35 +1,46 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Objects/Soldier.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Gun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Art/BelgVisual.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CapsuleMesh" id=1]
-
-[sub_resource type="PrismMesh" id=2]
-
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=1]
+height = 2.95806
 
 [node name="Soldier" type="KinematicBody"]
 script = ExtResource( 1 )
 
 [node name="Gun" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.997321, -0.00210567, -0.0731227, -0.000744514, 0.999242, -0.038929, 0.0731492, 0.0388791, 0.996563, 1.40345, 1.46656, 0 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.04272, 0 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -0.18318, -0.706047 )
-mesh = SubResource( 2 )
-material/0 = null
+transform = Transform( 0.997321, -0.00210567, -0.0731227, -0.000744514, 0.999242, -0.038929, 0.0731492, 0.0388791, 0.996563, 1.1395, 2.24359, -2.3037 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.02995, 0 )
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.66753, 0 )
+shape = SubResource( 1 )
+
+[node name="BelgVisual" parent="." instance=ExtResource( 3 )]
+
+[node name="Head" parent="BelgVisual" index="0"]
+transform = Transform( -4.37114e-06, -100, -4.37114e-06, 0, -4.37114e-06, 100, -100, 4.37114e-06, 1.91069e-13, 0, 3.891, 0 )
+
+[node name="BelgianHelmet" parent="BelgVisual/Head" index="0"]
+transform = Transform( 1, 3.5527e-15, 0, -3.5527e-15, 1, 0, 0, 0, 1, 0, 0, 0.0120438 )
+
+[node name="Body" parent="BelgVisual" index="1"]
+transform = Transform( -4.33717e-06, -100, 1.21753e-06, 99.9611, -4.36944e-06, -2.78868, 2.78868, 1.0961e-06, 99.9611, 0, 1.65215, 0 )
+
+[node name="Larm" parent="BelgVisual" index="2"]
+transform = Transform( 1.278e-05, -96.1865, -27.3523, 2.39121e-06, -27.3523, 96.1866, -100, -1.29467e-05, -1.19561e-06, 1.34701, 1.94703, -5.88797e-08 )
+
+[node name="Rarm" parent="BelgVisual" index="3"]
+transform = Transform( -1.13734e-05, -92.6345, 37.6677, 2.84732e-06, 37.6677, 92.6344, -100, 1.16082e-05, -1.64651e-06, -1.40538, 1.94703, 6.14311e-08 )
+
+[node name="Lleg" parent="BelgVisual" index="5"]
+transform = Transform( 100, 0, 0, 0, -7.24411, 99.7373, 0, -99.7373, -7.24411, 0.401573, 0.450417, 0.0353895 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="animation_finished" from="BelgVisual/Animations" to="." method="_on_Animations_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="BelgVisual"]

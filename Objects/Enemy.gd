@@ -1,7 +1,10 @@
 extends KinematicBody
+
 var shooting : bool = false
 var target : KinematicBody = null
 var yielding : bool = false
+onready var ani = $DutchVisual/Animations
+
 func get_class():
 	return "Enemy"
 
@@ -9,30 +12,38 @@ func is_class(name):
 	return name == "Enemy"
 
 func _ready():
-	pass # Replace with function body.
+	$TurnTick.wait_time = rand_range(0.5, 3)
+
 
 func _process(delta):
 	if target == null:
 		for body in $SenseArea.get_overlapping_bodies():
 			if body.is_class("Soldier") || body.is_class("Player"):
 				target = body
-	if target != null && not shooting:
-		shooting = true
-		$Gun.aim(target.get_class())
-		yielding = true
-		for i in range( 20 + randi() % 20):
-			yield(get_tree().create_timer(0.1), "timeout")
-		yielding = false
-		$Gun.shoot()
-		shooting = false
-		if target != null && not $SenseArea.overlaps_body(target):
+	if target != null:
+		if not shooting:
+			shooting = true
+			$Gun.aim(target.get_class())
+			ani.play("Aim")
+			$AimingTimer.wait_time = rand_range(4.0, 8.0)
+			$AimingTimer.start()
+		if not $SenseArea.overlaps_body(target):
 			target = null
+			
 
 func die():
-	if yielding:
-		visible = false
-		for i in range(5):
-			yield(get_tree().create_timer(1), "timeout")
+	ani.play("Die")
+	yield(ani, "animation_finished")
 	queue_free()
-	
 
+func _on_AimingTimer_timeout():
+	$Gun.shoot()
+	ani.play("Shoot")
+	$AimingTimer.stop()
+	shooting = false
+
+func _on_TurnTick_timeout():
+	if target != null:
+		look_at(target.global_transform.origin, Vector3.UP)
+		rotation.x = 0
+		rotation.z = 0

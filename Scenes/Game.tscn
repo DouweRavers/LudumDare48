@@ -13,10 +13,10 @@
 light_color = Color( 0.960784, 0.870588, 0.568627, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.294991, 0, 0.9555, 0, 1, 0, -0.9555, 0, 0.294991, 9.90062, 0, 7.39691 )
+transform = Transform( 0.294991, 0, 0.9555, 0, 1, 0, -0.9555, 0, 0.294991, 9.901, 0.515639, 7.397 )
 
 [node name="Soldier" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.30532, 0, 9.72574 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2442, 3.8147e-06, -0.60535 )
 navigation_node = NodePath("../City/Navigation")
 target_node = NodePath("../Player/Positions/Position3D")
 
@@ -24,10 +24,11 @@ target_node = NodePath("../Player/Positions/Position3D")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53255, 0, 32.6183 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.995886, 0, -0.0906152, 0, 1, 0, 0.0906152, 0, -0.995886, -12.1833, 0, -13.1758 )
+transform = Transform( -0.0639402, 0, -0.997954, 0, 1, 0, 0.997954, 0, -0.0639402, -40.4099, 0, 0.582903 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.995886, 0, -0.0906152, 0, 1, 0, 0.0906152, 0, -0.995886, 16.6031, 0, -22.2117 )
+transform = Transform( -0.0639402, 0, -0.997954, 0, 1, 0, 0.997954, 0, -0.0639402, -40.3355, 0, 7.31884 )
 
 [editable path="City"]
 [editable path="Player"]
+[editable path="Player/BelgVisual"]

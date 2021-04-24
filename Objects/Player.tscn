@@ -1,18 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Player.gd" type="Script" id=1]
 [ext_resource path="res://Art/soldierPositions.png" type="Texture" id=2]
+[ext_resource path="res://Art/BelgVisual.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CapsuleMesh" id=1]
+[sub_resource type="CapsuleShape" id=1]
+height = 2.46465
 
-[sub_resource type="PrismMesh" id=3]
-
-[sub_resource type="CapsuleShape" id=2]
-
-[sub_resource type="PlaneMesh" id=4]
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 25, 7 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
 albedo_texture = ExtResource( 2 )
 emission_enabled = true
@@ -21,30 +19,29 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 2.38373, 1 )
+
+[sub_resource type="CapsuleMesh" id=5]
+radius = 0.1
+mid_height = 2.0
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.885985, 0.463714, 0, -0.463714, 0.885985, 0, 7.04562, 10.9544 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.04272, 0 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
-transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -0.18318, -0.706047 )
-mesh = SubResource( 3 )
-material/0 = null
+transform = Transform( 0.99018, -0.0199051, 0.138371, 0, 0.989811, 0.142387, -0.139795, -0.140989, 0.980091, 4.80098, 8.64878, 15.5849 )
+fov = 90.0
+far = 250.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.02995, 0 )
-shape = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.68842, 0 )
+shape = SubResource( 1 )
 
 [node name="Positions" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 2.066 )
-mesh = SubResource( 4 )
-material/0 = SubResource( 5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.659498, 2.02875 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="Position3D" type="Position3D" parent="Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79573, 0, -1.70663 )
@@ -75,3 +72,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0828, 0, 2.15676 )
 
 [node name="Position3D10" type="Position3D" parent="Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09183, 0, 1.99742 )
+
+[node name="BelgVisual" parent="." instance=ExtResource( 3 )]
+
+[node name="SwordRange" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.61971 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SwordRange"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.24867, 1.16981 )
+shape = SubResource( 4 )
+
+[node name="Sword" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66437, 1.3202, -0.86405 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[editable path="BelgVisual"]
