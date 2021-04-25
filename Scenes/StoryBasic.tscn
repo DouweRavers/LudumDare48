@@ -1,0 +1,224 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Art/BelgieKaart.png" type="Texture" id=1]
+[ext_resource path="res://Art/army.webm" type="VideoStream" id=2]
+[ext_resource path="res://Art/NEWBOROU.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/StoryBasic.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "StoryStart"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 37.2, 50.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StoryText:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.5, 8.5, 13, 21.1, 29.1, 37.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Belgium 1830, August 3th
+
+", "The dutch army is crossing the Belgian border...
+
+", "This means war...", "They conquer city after city...
+Until they reach Leuven...", "You are commanded to go 
+*deep*
+Behind enemy lines.", "You should rescue as much soldiers as you can
+and destroy the main camp in Turnhout...", "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("StoryText:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5, 4.4, 5.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VideoPlayer:paused")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("VideoPlayer:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.7, 5.2, 8.5, 10.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("VideoPlayer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 10.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 50
+border_width_top = 50
+border_width_right = 50
+border_width_bottom = 50
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+extra_spacing_bottom = 15
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 6 )
+size = Vector2( 12, 8 )
+
+[sub_resource type="PlaneMesh" id=7]
+size = Vector2( 100, 100 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.156863, 0.686275, 0.168627, 1 )
+
+[sub_resource type="CylinderMesh" id=9]
+top_radius = 0.1
+bottom_radius = 0.2
+height = 0.2
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0, 1, 0.0627451, 1 )
+
+[node name="Control" type="Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 12 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "StoryStart"
+anims/StoryStart = SubResource( 2 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -307.0
+margin_top = -416.0
+margin_right = 307.0
+stream = ExtResource( 2 )
+autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="VideoPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="StoryText" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 61.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 4 )
+text = "The dutch army is crossing the Belgian border...
+
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Spatial" parent="."]
+
+[node name="Belgie" type="MeshInstance" parent="Background"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Background"]
+transform = Transform( -0.0143452, 0.228753, -0.973379, -0.00236042, 0.973469, 0.228809, 0.999894, 0.00557988, -0.0134246, 0, 0, 0 )
+shadow_enabled = true
+
+[node name="Camera" type="Camera" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 0.397484, 0.917609, 0, -0.917609, 0.397484, 0, 4.11885, 2.7316 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="City3" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.476242, 0.0614893, -2.3382 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 11 )
+
+[node name="City2" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518666, 0.0706197, -1.21913 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 11 )
+
+[node name="City" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56109, 0.064342, -0.312105 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 11 )
+
+[node name="City4" type="MeshInstance" parent="Background"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.536598, 0.064342, -0.549883 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 34.9228
+margin_top = 544.479
+margin_right = 206.923
+margin_bottom = 574.479
+text = "Play demo level"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
