@@ -13,7 +13,7 @@ config_version=4
 config/name="LudumDare48"
 run/main_scene="res://Scenes/StartUp.tscn"
 boot_splash/image="res://Art/DouwcoBanner.png"
-config/icon="res://icon.png"
+config/icon="res://logo.png"
 
 [autoload]
 
@@ -69,6 +69,10 @@ command_fire={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[memory]
+
+limits/message_queue/max_size_kb=8192
 
 [physics]
 

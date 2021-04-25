@@ -1,16 +1,23 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Art/BelgieKaart.png" type="Texture" id=1]
 [ext_resource path="res://Art/army.webm" type="VideoStream" id=2]
 [ext_resource path="res://Art/NEWBOROU.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/StoryBasic.gd" type="Script" id=4]
+[ext_resource path="res://Art/FirstCityButton.png" type="Texture" id=5]
+[ext_resource path="res://Sounds/Drums.wav" type="AudioStream" id=6]
+[ext_resource path="res://Art/SecondCityButton.png" type="Texture" id=7]
+[ext_resource path="res://Art/LastCityButton.png" type="Texture" id=8]
+[ext_resource path="res://materials/UnlockedMaterial.tres" type="Material" id=9]
+[ext_resource path="res://materials/lockedMaterial.tres" type="Material" id=10]
+[ext_resource path="res://SourceFiles/theSon.png" type="Texture" id=11]
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "StoryStart"
-length = 60.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:self_modulate")
 tracks/0/interp = 1
@@ -18,7 +25,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 37.2, 50.1 ),
+"times": PoolRealArray( 0, 37.2, 44.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -30,18 +37,18 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 4.5, 8.5, 13, 21.1, 29.1, 37.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 4.5, 8.8, 11.3, 15.1, 22.6, 29.1, 34.5, 40 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "Belgium 1830, August 3th
-
-", "The dutch army is crossing the Belgian border...
+"values": [ "Belgium, 
+1830 August 3th", "The dutch army is crossing the Belgian border...
 
 ", "This means war...", "They conquer city after city...
-Until they reach Leuven...", "You are commanded to go 
-*deep*
-Behind enemy lines.", "You should rescue as much soldiers as you can
-and destroy the main camp in Turnhout...", "" ]
+Until they reach the city of Leuven...", "At the monent of attack your son was a soldier in Turnhout..
+The first city that was taken...", "As military man you can't stand the unknowingness
+that your son is alive or not...", "You decide to go
+* Deep *
+In enemy lines to save your son and other soldiers...", "Nobody will be able to stop you... ", "" ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("StoryText:self_modulate")
@@ -91,6 +98,66 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true, false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("UI:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 40.8, 44.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("TextureRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 15.1, 22.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("TextureRect:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 15.1, 16.9, 21.1, 22.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Button:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 44.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("UI:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 40.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 0 )
@@ -103,14 +170,16 @@ border_blend = true
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
-extra_spacing_bottom = 15
+extra_spacing_bottom = 30
 font_data = ExtResource( 3 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 1 )
+metallic_specular = 1.0
+roughness = 0.0
 
-[sub_resource type="PlaneMesh" id=5]
-material = SubResource( 6 )
+[sub_resource type="PlaneMesh" id=6]
+material = SubResource( 5 )
 size = Vector2( 12, 8 )
 
 [sub_resource type="PlaneMesh" id=7]
@@ -120,31 +189,90 @@ size = Vector2( 100, 100 )
 albedo_color = Color( 0.156863, 0.686275, 0.168627, 1 )
 
 [sub_resource type="CylinderMesh" id=9]
+material = ExtResource( 9 )
 top_radius = 0.1
 bottom_radius = 0.2
 height = 0.2
 
-[sub_resource type="SpatialMaterial" id=11]
-albedo_color = Color( 1, 0, 0, 1 )
+[sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="SpatialMaterial" id=10]
-albedo_color = Color( 0, 1, 0.0627451, 1 )
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 315, 127 )
 
-[node name="Control" type="Panel"]
-self_modulate = Color( 0, 0, 0, 1 )
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 315, 127 )
+modulate_color = Color( 0.14902, 0.14902, 0.14902, 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 25
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 15
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 284, 127 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 284, 127 )
+modulate_color = Color( 0.188235, 0.188235, 0.188235, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 15
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 420, 331 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 420, 331 )
+modulate_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 25
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 15
+font_data = ExtResource( 3 )
+
+[node name="StoryBasic" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 12 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "StoryStart"
 anims/StoryStart = SubResource( 2 )
 
+[node name="Button" type="Button" parent="."]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -51.0
+margin_right = -24.0
+margin_bottom = -19.0
+text = "Skip"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -163,14 +291,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 3 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -274.319
+margin_top = -423.093
+margin_right = 262.681
+margin_bottom = -31.0925
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StoryText" type="Label" parent="."]
 anchor_right = 1.0
 margin_top = 61.0
 margin_bottom = 122.0
 custom_fonts/font = SubResource( 4 )
-text = "The dutch army is crossing the Belgian border...
-
-"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -179,7 +321,7 @@ __meta__ = {
 [node name="Background" type="Spatial" parent="."]
 
 [node name="Belgie" type="MeshInstance" parent="Background"]
-mesh = SubResource( 5 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Background"]
@@ -188,37 +330,111 @@ shadow_enabled = true
 
 [node name="Camera" type="Camera" parent="Background"]
 transform = Transform( 1, 0, 0, 0, 0.397484, 0.917609, 0, -0.917609, 0.397484, 0, 4.11885, 2.7316 )
+size = 10.0
 
-[node name="MeshInstance" type="MeshInstance" parent="Background"]
+[node name="Background" type="MeshInstance" parent="Background"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
 mesh = SubResource( 7 )
 material/0 = SubResource( 8 )
 
-[node name="City3" type="MeshInstance" parent="Background"]
+[node name="Turnhout" type="MeshInstance" parent="Background"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.476242, 0.0614893, -2.3382 )
 mesh = SubResource( 9 )
-material/0 = SubResource( 11 )
+material/0 = ExtResource( 10 )
 
-[node name="City2" type="MeshInstance" parent="Background"]
+[node name="Diest" type="MeshInstance" parent="Background"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518666, 0.0706197, -1.21913 )
 mesh = SubResource( 9 )
-material/0 = SubResource( 11 )
+material/0 = ExtResource( 10 )
 
-[node name="City" type="MeshInstance" parent="Background"]
+[node name="Leuven" type="MeshInstance" parent="Background"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56109, 0.064342, -0.312105 )
 mesh = SubResource( 9 )
-material/0 = SubResource( 11 )
+material/0 = ExtResource( 10 )
 
-[node name="City4" type="MeshInstance" parent="Background"]
+[node name="Brussel" type="MeshInstance" parent="Background"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.536598, 0.064342, -0.549883 )
 mesh = SubResource( 9 )
-material/0 = SubResource( 10 )
+material/0 = null
 
-[node name="Button" type="Button" parent="."]
-margin_left = 34.9228
-margin_top = 544.479
-margin_right = 206.923
-margin_bottom = 574.479
-text = "Play demo level"
+[node name="UI" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leuven" type="Button" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 188.265
+margin_top = -189.034
+margin_right = 418.265
+margin_bottom = -94.0342
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+text = "Infiltrate Leuven"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Diest" type="Button" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 386.084
+margin_top = -187.573
+margin_right = 604.084
+margin_bottom = -92.5732
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 14 )
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+disabled = true
+text = "Infiltrate Diest     ."
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Turnhout" type="Button" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 576.3
+margin_top = -266.106
+margin_right = 888.3
+margin_bottom = -19.1051
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 17 )
+custom_fonts/font = SubResource( 19 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+disabled = true
+text = "Infiltrate Turnhout       "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="UI/Leuven" to="." method="_on_Leuven_pressed"]
+[connection signal="pressed" from="UI/Diest" to="." method="_on_Diest_pressed"]
+[connection signal="pressed" from="UI/Turnhout" to="." method="_on_Turnhout_pressed"]

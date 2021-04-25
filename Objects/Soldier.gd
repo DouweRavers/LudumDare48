@@ -1,11 +1,8 @@
 extends KinematicBody
 
 export var speed = 10
-export var navigation_node : NodePath
-export var target_node : NodePath
-
-onready var nav : Navigation = get_node(navigation_node)
-onready var target : Position3D = get_node(target_node)
+onready var nav : Navigation
+onready var target : Position3D
 
 
 var path = []
@@ -33,7 +30,7 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	if is_aiming:
+	if is_aiming || $BelgVisual/Animations.current_animation == "Die":
 		return
 	if path_node < path.size():
 		var direction = (path[path_node] - global_transform.origin)
@@ -47,7 +44,8 @@ func _physics_process(delta):
 		$BelgVisual/Animations.play("Idle")
 
 func _on_Timer_timeout():
-	move_to(target.global_transform.origin)
+	if not $BelgVisual/Animations.current_animation == "Die":
+		move_to(target.global_transform.origin)
 
 func move_to(pos):
 	if not is_aiming:
@@ -56,12 +54,15 @@ func move_to(pos):
 		path_node = 0
 
 func die():
+	target.visible = true
 	$Gun.visible = false
 	$BelgVisual/Animations.play("Die")
-	yield($BelgVisual/Animations, "animation_finished")
-	queue_free()
+	set_process(false)
+
 
 
 func _on_Animations_animation_finished(anim_name):
 	if anim_name == "Shoot":
 		is_aiming = false
+	if anim_name == "Die":
+		queue_free()

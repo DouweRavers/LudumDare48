@@ -2,6 +2,7 @@ extends Node
 
 var loader : ResourceInteractiveLoader
 var load_screen : Control
+onready var gamedata = load("res://Code/GameData.gd").new()
 
 func _ready():
 	set_process(false)

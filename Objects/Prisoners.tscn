@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://materials/Wood.tres" type="Material" id=1]
+[ext_resource path="res://materials/BelgianFlag.tres" type="Material" id=2]
+[ext_resource path="res://materials/DutchFlag.tres" type="Material" id=3]
+[ext_resource path="res://Art/Models/CapturedBelg.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Prisoners.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FromDutchToBelgian"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance/MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.86675, 3.8787, 0 ), Vector3( 1.86675, -3.91829, 0 ), Vector3( 1.86675, 3.8787, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance/MeshInstance:material/0")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 2 ), null ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MeshInstance/MeshInstance/MeshInstance2:material/0")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 2 ), null ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "reset"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance/MeshInstance:mesh:material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance/MeshInstance:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1.86675, 3.8787, 0 ) ]
+}
+
+[sub_resource type="CylinderMesh" id=3]
+material = ExtResource( 1 )
+top_radius = 0.3
+bottom_radius = 0.3
+height = 10.0
+
+[sub_resource type="QuadMesh" id=4]
+material = ExtResource( 3 )
+size = Vector2( 4, 2 )
+
+[sub_resource type="CylinderShape" id=5]
+radius = 16.8052
+height = 13.2673
+
+[node name="Prisoners" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FromDutchToBelgian = SubResource( 1 )
+anims/reset = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.55287, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86675, 3.8787, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance/MeshInstance"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.9837, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.01285, 0 )
+shape = SubResource( 5 )
+
+[node name="BelgVisual" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.726866, 0, -3.5575 )
+
+[node name="BelgVisual2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.71407, 0, 0.700075, 0, 1, 0, -0.700075, 0, 0.71407, -4.06457, 0, -0.690278 )
+
+[node name="BelgVisual3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.872709, 0, 0.48824, 0, 1, 0, -0.48824, 0, -0.872709, -1.881, 0, 3.008 )
+
+[node name="BelgVisual4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.96498, 0, -0.262324, 0, 1, 0, 0.262324, 0, -0.96498, 2.432, 0, 2.135 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

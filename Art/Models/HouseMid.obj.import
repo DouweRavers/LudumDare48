@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/HouseMid.obj-075a0ac3b66d37d3fc48f72396e28ef1.mesh"
+
+[deps]
+
+files=[ "res://.import/HouseMid.obj-075a0ac3b66d37d3fc48f72396e28ef1.mesh" ]
+
+source_file="res://Art/Models/HouseMid.obj"
+dest_files=[ "res://.import/HouseMid.obj-075a0ac3b66d37d3fc48f72396e28ef1.mesh", "res://.import/HouseMid.obj-075a0ac3b66d37d3fc48f72396e28ef1.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 10, 10, 10 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -9,7 +9,7 @@ func aim(target_type):
 	rotation.y = 0
 	for body in $ScanningZone.get_overlapping_bodies():
 		if body.is_class(target_type):
-			look_at(body.global_transform.origin + Vector3.UP, Vector3.UP)
+			look_at(body.global_transform.origin + Vector3.UP*2, Vector3.UP)
 	$AnimationPlayer.play("AimGun")
 
 func cancel_aim():

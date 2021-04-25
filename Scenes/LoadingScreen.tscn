@@ -1,17 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/LoadingScreen.gd" type="Script" id=1]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.172549, 0.00392157, 0.0705882, 1 )
+[ext_resource path="res://Art/NEWBOROU.TTF" type="DynamicFontData" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.172549, 0.00392157, 0.0705882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_right = 200
 border_color = Color( 1, 0.819608, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_bottom = 30
+font_data = ExtResource( 2 )
 
 [node name="LoadingScreen" type="Panel"]
 anchor_right = 1.0
@@ -20,7 +27,7 @@ margin_left = 2.52405
 margin_top = 1.0
 margin_right = 2.52405
 margin_bottom = 1.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,11 +39,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -358.5
-margin_top = -153.5
+margin_top = -227.5
 margin_right = 358.5
-margin_bottom = 153.5
-custom_styles/fg = SubResource( 1 )
-custom_styles/bg = SubResource( 2 )
+margin_bottom = 79.5
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,9 +54,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -238.5
-margin_top = -93.0
-margin_right = 238.5
-margin_bottom = -69.0
+margin_left = -314.487
+margin_top = -192.184
+margin_right = 341.513
+margin_bottom = -19.1843
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.890196, 0, 1 )
-text = "Did you know that Belgium has 6 governments?"
+text = "                   The Belgian national Anthem:
+Dutch:      Voor Vorst, voor Vrijheid en voor Recht.
+French:    Le Roi, la Loi, la Liberte !
+ German:   Gesetz und Konig und die Freiheit hoch!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

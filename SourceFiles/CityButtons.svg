@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1000"
+   height="500"
+   viewBox="0 0 264.58333 132.29167"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (394de47547, 2021-03-26)"
+   sodipodi:docname="CityButtons.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.948421"
+     inkscape:cx="463.8677"
+     inkscape:cy="109.90303"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="1920"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <path
+       id="path851"
+       style="fill:#000000;stroke-width:0.234386;stroke-linecap:round"
+       d="m 30.179531,50.622855 c -9.284438,0.0014 -16.810212,7.528332 -16.810177,16.812771 -3.5e-5,9.285392 7.527227,16.812719 16.812619,16.812772 0.376416,-2.9e-5 0.752724,-0.01273 1.128288,-0.03802 H 81.122532 L 96.748275,67.448062 81.122532,50.685724 H 31.634373 c -0.483,-0.04189 -0.967586,-0.06286 -1.4524,-0.06287 z"
+       sodipodi:nodetypes="scccccccss"
+       inkscape:export-filename="/home/douwe/projects/LudumDare48/Art/FirstCityButton.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="rect898"
+       style="fill:#000000;stroke-width:0.461734;stroke-linecap:round"
+       d="M 87.971951,51.079259 H 147.4404 L 163.03706,67.925116 147.4404,84.770975 H 87.971951 L 103.5686,67.925116 Z"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/douwe/projects/LudumDare48/Art/SecondCityButton.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="rect898-6"
+       style="fill:#ffd42a;stroke-width:0.404695;stroke-linecap:round"
+       d="M 94.472517,52.490735 H 144.0824 L 157.09347,68.003293 144.0824,83.515857 H 94.472517 L 107.48359,68.003293 Z"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/douwe/projects/LudumDare48/Art/SecondCityButton.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="rect981"
+       style="fill:#000000;stroke-width:0.467899;stroke-linecap:round"
+       d="m 220.55367,23.984237 c -17.78176,7e-5 -33.79454,10.762678 -40.50979,27.227678 h -26.79176 l 15.5966,17.039765 -15.5966,17.039764 h 27.22981 c 6.97201,15.912556 22.69882,26.192136 40.07174,26.192266 24.16233,5e-5 43.74978,-19.587405 43.74973,-43.749735 5e-5,-24.162331 -19.5874,-43.749783 -43.74973,-43.749738 z"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="/home/douwe/projects/LudumDare48/Art/LastCityButton.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="rect981-3"
+       style="fill:#ffd42a;stroke-width:0.387651;stroke-linecap:round"
+       d="m 217.63029,31.816299 c -14.73207,5.9e-5 -27.99857,8.916815 -33.56211,22.557962 h -22.19682 l 12.92169,14.117345 -12.92169,14.117339 h 22.55974 c 5.77627,13.183464 18.80583,21.700025 33.19919,21.700135 20.01834,4e-5 36.24643,-16.228047 36.24639,-36.246384 4e-5,-20.01835 -16.22805,-36.246434 -36.24639,-36.246397 z"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="/home/douwe/projects/LudumDare48/Art/LastCityButton.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path851-5"
+       style="fill:#ffd42a;stroke-width:0.208624;stroke-linecap:round"
+       d="m 33.678859,52.140715 c -8.055566,0.0013 -14.585242,6.874222 -14.585212,15.35197 -3e-5,8.478618 6.530937,15.351923 14.58733,15.351971 0.326595,-2.6e-5 0.653095,-0.01162 0.978951,-0.03472 H 77.879133 L 91.436676,67.504041 77.879133,52.198121 H 34.941141 c -0.419072,-0.03825 -0.839518,-0.0574 -1.260164,-0.05741 z"
+       sodipodi:nodetypes="scccccccss"
+       inkscape:export-filename="/home/douwe/projects/LudumDare48/Art/FirstCityButton.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="flags">
+    <rect
+       style="fill:#ffd42a;stroke-width:0.599342;stroke-linecap:round"
+       id="rect1063"
+       width="105.83334"
+       height="52.916668"
+       x="9.9744902"
+       y="7.2816005" />
+    <rect
+       style="fill:#ff0000;stroke-width:0.34603;stroke-linecap:round"
+       id="rect1063-6"
+       width="35.277779"
+       height="52.916668"
+       x="80.530052"
+       y="7.2816005" />
+    <rect
+       style="fill:#000000;stroke-width:0.34603;stroke-linecap:round"
+       id="rect1063-6-2"
+       width="35.277779"
+       height="52.916668"
+       x="9.9744902"
+       y="7.2815967" />
+  </g>
+</svg>

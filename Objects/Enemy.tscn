@@ -2,13 +2,16 @@
 
 [ext_resource path="res://Objects/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Gun.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Art/DutchVisual.tscn" type="PackedScene" id=3]
-[ext_resource path="res://materials/EnemyAim.tres" type="Material" id=4]
+[ext_resource path="res://Art/Models/DutchVisual.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_color = Color( 1, 0, 0, 0.313726 )
+
+[sub_resource type="CapsuleShape" id=2]
 height = 3.04779
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 20, 5, 18.2389 )
 
 [node name="Enemy" type="KinematicBody"]
@@ -19,28 +22,40 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.830849, 2.38346, -1.83042 )
 
 [node name="AimVolume" parent="Gun" index="2"]
-material = ExtResource( 4 )
+material = SubResource( 1 )
 
 [node name="DutchVisual" parent="." instance=ExtResource( 3 )]
 
+[node name="Larm" parent="DutchVisual" index="2"]
+transform = Transform( -27.2713, -96.1867, 2.09464, 95.9043, -27.3516, -7.36595, 7.65798, 6.37024e-05, 99.7064, 1.24687, 2.29919, -0.565055 )
+
+[node name="Rarm" parent="DutchVisual" index="3"]
+transform = Transform( 37.6485, -65.4707, -65.5453, 92.5869, 24.1437, 29.0647, -3.20383, -71.6288, 69.7069, -1.04686, 2.37667, -0.718991 )
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.67649, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="SenseArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.20628, -11.3111 )
 
 [node name="CollisionShape" type="CollisionShape" parent="SenseArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.09295 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="AimingTimer" type="Timer" parent="."]
 
 [node name="TurnTick" type="Timer" parent="."]
 autostart = true
 
+[node name="Reset" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[connection signal="animation_finished" from="DutchVisual/Animations" to="." method="_on_Animations_animation_finished"]
 [connection signal="timeout" from="AimingTimer" to="." method="_on_AimingTimer_timeout"]
 [connection signal="timeout" from="TurnTick" to="." method="_on_TurnTick_timeout"]
+[connection signal="timeout" from="Reset" to="." method="_on_Reset_timeout"]
 
 [editable path="Gun"]
 [editable path="DutchVisual"]

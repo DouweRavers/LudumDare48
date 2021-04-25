@@ -1,20 +1,31 @@
 extends Panel
+var unlockmat = load("res://materials/UnlockedMaterial.tres")
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if not Singleton.gamedata.had_intro:
+		$AnimationPlayer.play("StoryStart")
+		Singleton.gamedata.had_intro = true
+	if Singleton.gamedata.cities["Leuven"]:
+		$UI/Diest.disabled = false
+		$Background/Leuven.material_override = unlockmat
+	if Singleton.gamedata.cities["Diest"]:
+		$UI/Turnhout.disabled = false
+		$Background/Diest.material_override = unlockmat
+	if Singleton.gamedata.cities["Turnhout"]:
+		$Background/Turnhout.material_override = unlockmat
+		#if time over play a final animation here
 
+func _on_Leuven_pressed():
+	Singleton.load_scene("BattleOfLeuven")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Diest_pressed():
+	Singleton.load_scene("BattleOfDiest")
+
+func _on_Turnhout_pressed():
+	Singleton.gamedata.cities["Turnhout"] = true
+	Singleton.load_scene("StoryBasic")
 
 
 func _on_Button_pressed():
-	Singleton.load_scene("Game")
+	$AnimationPlayer.advance(40-$AnimationPlayer.current_animation_position)
+

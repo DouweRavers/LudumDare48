@@ -1,0 +1,420 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/BattleOfDiest.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Diest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Prisoners.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/DiestInfo.png" type="Texture" id=6]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 100, 20, 50 )
+
+[node name="BattleOfDiest" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Soldiers" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -470.846, 0, 6.41498 )
+
+[node name="Enemies" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -470.846, 0, 6.41498 )
+
+[node name="FirstBattalion" type="Spatial" parent="Enemies"]
+transform = Transform( 0.67309, 0, 0.739561, 0, 1, 0, -0.739561, 0, 0.67309, 301.678, 1.52588e-05, 329.113 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion2" type="Spatial" parent="Enemies"]
+transform = Transform( 0.157848, 0, 0.987463, 0, 1, 0, -0.987463, 0, 0.157848, 255.123, 1.52588e-05, 184.229 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion2" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion3" type="Spatial" parent="Enemies"]
+transform = Transform( 0.94804, 0, 0.318148, 0, 1, 0, -0.318148, 0, 0.94804, 389.731, 1.52588e-05, 287.053 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion3" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion4" type="Spatial" parent="Enemies"]
+transform = Transform( -0.78644, 0, 0.617668, 0, 1, 0, -0.617668, 0, -0.78644, 334.719, 1.52588e-05, 107.859 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion4" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion5" type="Spatial" parent="Enemies"]
+transform = Transform( -0.340511, 0, -0.940241, 0, 1, 0, 0.940241, 0, -0.340511, 471.703, 6.10352e-05, 179.614 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion5" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion6" type="Spatial" parent="Enemies"]
+transform = Transform( 0.372065, 0, 0.928206, 0, 1, 0, -0.928206, 0, 0.372065, 677.817, 2.18279e-11, 84.5752 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion6" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion7" type="Spatial" parent="Enemies"]
+transform = Transform( -0.134868, 0, 0.990863, 0, 1, 0, -0.990863, 0, -0.134868, 763.505, 3.05176e-05, 121.78 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion7" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion8" type="Spatial" parent="Enemies"]
+transform = Transform( -0.0650548, 0, 0.997881, 0, 1, 0, -0.997881, 0, -0.0650548, 852.201, 3.05176e-05, 197.982 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 5.62327, 2.28882e-05, -6.3894 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 11.8956, 2.19345e-05, -6.20955 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, -5.09971, 2.28882e-05, -6.10533 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 1.17349, 2.19345e-05, -5.92501 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 7.13526, 2.28882e-05, -3.66332 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 13.4076, 2.19345e-05, -3.48353 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, -3.5873, 2.28882e-05, -3.37788 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 2.68552, 2.19345e-05, -3.19894 )
+
+[node name="FirstBattalion9" type="Spatial" parent="Enemies"]
+transform = Transform( -0.153176, 0, -0.988199, 0, 1, 0, 0.988199, 0, -0.153176, 625.921, 3.05176e-05, 341.315 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55075, 2.28882e-05, -1.39152 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion9" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion12" type="Spatial" parent="Enemies"]
+transform = Transform( 0.323124, 0, 0.946356, 0, 1, 0, -0.946356, 0, 0.323124, 863.369, 3.05176e-05, 254.656 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 10.2023, 2.19345e-05, -9.82951 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -4.55072, 2.28882e-05, -1.39154 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 1.00226, 2.19345e-05, -4.31551 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 7.30624, 2.28882e-05, -5.27351 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 12.8582, 2.19345e-05, -8.19752 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -1.89374, 2.28882e-05, 0.241486 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion12" instance=ExtResource( 4 )]
+transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
+
+[node name="FirstBattalion10" type="Spatial" parent="Enemies"]
+transform = Transform( 0.982417, 0, 0.186696, 0, 1, 0, -0.186696, 0, 0.982417, 764.79, 3.05176e-05, 356.886 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 5.62327, 2.28882e-05, -6.3894 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 11.8956, 2.19345e-05, -6.20955 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, -5.09971, 2.28882e-05, -6.10533 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 1.17349, 2.19345e-05, -5.92501 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 7.13526, 2.28882e-05, -3.66332 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 13.4076, 2.19345e-05, -3.48353 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, -3.5873, 2.28882e-05, -3.37788 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 2.68552, 2.19345e-05, -3.19894 )
+
+[node name="FirstBattalion11" type="Spatial" parent="Enemies"]
+transform = Transform( 0.979081, 0, 0.203471, 0, 1, 0, -0.203471, 0, 0.979081, 466.696, 4.57764e-05, 361.738 )
+
+[node name="Enemy" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 5.62327, 2.28882e-05, -6.3894 )
+
+[node name="Enemy2" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 11.8956, 2.19345e-05, -6.20955 )
+
+[node name="Enemy3" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, -5.09971, 2.28882e-05, -6.10533 )
+
+[node name="Enemy4" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 1.17349, 2.19345e-05, -5.92501 )
+
+[node name="Enemy5" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 7.13526, 2.28882e-05, -3.66332 )
+
+[node name="Enemy6" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 13.4076, 2.19345e-05, -3.48353 )
+
+[node name="Enemy7" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, -3.5873, 2.28882e-05, -3.37788 )
+
+[node name="Enemy8" parent="Enemies/FirstBattalion11" instance=ExtResource( 4 )]
+transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 2.68552, 2.19345e-05, -3.19894 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.296009, 0, -0.955185, 0, 1, 0, 0.955185, 0, 0.296009, -336.964, -3.8147e-06, 306.684 )
+soldiers_path = NodePath("../Soldiers")
+
+[node name="Info" parent="Player/UI" index="5"]
+texture = ExtResource( 6 )
+
+[node name="Diest" parent="." instance=ExtResource( 2 )]
+
+[node name="Prisoners" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.990156, 0, -0.139968, 0, 1, 0, 0.139968, 0, 0.990156, -201.572, 0.0716691, 184.861 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="Prisoners2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.990156, 0, -0.139968, 0, 1, 0, 0.139968, 0, 0.990156, -152.785, 0, 334.664 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="Prisoners3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.8079, 0, 53.2197 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="Prisoners4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2138, 0, 92.5783 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="Prisoners5" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.949, 0, 55.954 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="Prisoners6" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.362687, -0.0893984, 0.927613, 0.032554, 0.995996, 0.0832605, -0.931342, 0, 0.364145, 302.053, 1.16463, 111.771 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="Prisoners7" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.360856, -0.134107, 0.922929, 0.0488346, 0.990966, 0.1249, -0.931342, 0, 0.364145, 179.59, 0.519202, 324.272 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="Prisoners8" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.361086, -0.129349, 0.923518, 0.047102, 0.991599, 0.120469, -0.931342, 0, 0.364145, 175.898, 1.01419, 363.193 )
+soldiers_path = NodePath("../Soldiers")
+player_path = NodePath("../Player")
+navigation_path = NodePath("../Diest")
+
+[node name="FinishGame" type="Area" parent="."]
+transform = Transform( 0.817889, 0, -0.575377, 0, 1, 0, 0.575377, 0, 0.817889, 353.301, -1.08002, 23.4001 )
+
+[node name="CollisionShape" type="CollisionShape" parent="FinishGame"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92133, 18.0136, -35.9648 )
+shape = SubResource( 1 )
+
+[node name="wonTimer" type="Timer" parent="FinishGame"]
+wait_time = 4.0
+
+[node name="countEnemies" type="Timer" parent="."]
+
+[connection signal="body_entered" from="FinishGame" to="." method="_on_FinishGame_body_entered"]
+[connection signal="timeout" from="FinishGame/wonTimer" to="." method="_on_wonTimer_timeout"]
+[connection signal="timeout" from="countEnemies" to="." method="_on_Timer_timeout"]
+
+[editable path="Player"]
+[editable path="Player/BelgVisual"]
