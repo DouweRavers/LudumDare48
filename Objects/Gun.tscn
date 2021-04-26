@@ -11,11 +11,11 @@
 [ext_resource path="res://materials/metal.tres" type="Material" id=9]
 [ext_resource path="res://Art/Aiming.tres" type="Animation" id=10]
 
-[sub_resource type="CylinderShape" id=1]
+[sub_resource type="CylinderShape" id=10]
 radius = 10.0
 height = 25.0
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=11]
 resource_name = "AimGun"
 length = 2.0
 tracks/0/type = "value"
@@ -43,72 +43,60 @@ tracks/1/keys = {
 "values": [ 15.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=12]
 resource_name = "Load"
 loop = true
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=13]
 resource_name = "Shoot"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Mesh:translation")
+tracks/0/path = NodePath("FireParticles:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.355089, 0 ), Vector3( 0, 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Mesh:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 20.107, 0, 0 ), Vector3( 0, 0, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("FireParticles:emitting")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("SmokeParticles:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("SmokeParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("ShotSound:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("ShotSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Mesh:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 26.623, 0, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
 [sub_resource type="SpatialMaterial" id=5]
@@ -169,13 +157,13 @@ monitorable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ScanningZone"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -4.78283 )
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/AimGun = SubResource( 2 )
+anims/AimGun = SubResource( 11 )
 anims/Aiming = ExtResource( 10 )
-anims/Load = SubResource( 3 )
-anims/Shoot = SubResource( 4 )
+anims/Load = SubResource( 12 )
+anims/Shoot = SubResource( 13 )
 
 [node name="ShotSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 3 )
@@ -203,6 +191,7 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 5.0
 initial_velocity_random = 1.0
 linear_accel = -2.0
+scale_amount = 4.0
 
 [node name="SmokeParticles" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.36761 )
@@ -222,6 +211,7 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 5.0
 initial_velocity_random = 1.0
 linear_accel = -2.0
+scale_amount = 3.0
 color_ramp = SubResource( 9 )
 hue_variation = -0.52
 hue_variation_random = 0.61

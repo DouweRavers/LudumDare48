@@ -208,7 +208,7 @@ transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -
 transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
 
 [node name="FirstBattalion8" type="Spatial" parent="Enemies"]
-transform = Transform( -0.135214, 0, 0.990816, 0, 1, 0, -0.990816, 0, -0.135214, 37.8868, 3.05176e-05, 2.46247 )
+transform = Transform( -0.628805, 0, 0.777563, 0, 1, 0, -0.777563, 0, -0.628805, 37.8868, 3.05176e-05, 2.46247 )
 
 [node name="Enemy" parent="Enemies/FirstBattalion8" instance=ExtResource( 4 )]
 transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 5.62327, 2.28882e-05, -6.3894 )
@@ -289,7 +289,7 @@ transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, -
 transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 3.65826, 2.19345e-05, -2.68352 )
 
 [node name="FirstBattalion10" type="Spatial" parent="Enemies"]
-transform = Transform( 0.566794, 0, 0.823859, 0, 1, 0, -0.823859, 0, 0.566794, 179.863, 3.05176e-05, 102.592 )
+transform = Transform( 0.566794, 0, 0.823859, 0, 1, 0, -0.823859, 0, 0.566794, 175.855, 3.05176e-05, 66.4373 )
 
 [node name="Enemy" parent="Enemies/FirstBattalion10" instance=ExtResource( 4 )]
 transform = Transform( 0.995566, 0, -0.0940734, 0, 1, 0, 0.0940734, 0, 0.995566, 5.62327, 2.28882e-05, -6.3894 )

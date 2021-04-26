@@ -16,9 +16,6 @@ func get_class():
 func is_class(name):
 	return name == "Player"
 
-func _ready():
-	$UI.show_message("Objective\nFree all prisoners!")
-
 func _process(_delta):
 	if Input.is_action_just_pressed("command_fire"):
 		$Sword/AnimationPlayer.play("swing")
@@ -26,6 +23,8 @@ func _process(_delta):
 		for body in $SwordRange.get_overlapping_bodies():
 			if body.is_class("Enemy"):
 				body.die()
+			if body.is_class("Tent"):
+				body.burn()
 		yield($BelgVisual/Animations, "animation_finished")
 		$BelgVisual/Animations.play("Idle")
 
@@ -61,7 +60,7 @@ func assign_rank(soldier):
 
 func hit():
 	health -= 20
-	if health < 0:
+	if health < 0 && $gameover.is_stopped():
 		$gameover.start()
 		$UI.show_message("Your dead!")
 

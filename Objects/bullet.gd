@@ -9,3 +9,5 @@ func _on_Area_body_entered(body):
 		queue_free()
 	elif body.is_class("Player"):
 		body.hit()
+	elif body.is_class("Tent"):
+		body.burn()

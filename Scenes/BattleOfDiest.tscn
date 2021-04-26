@@ -20,7 +20,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -470.846, 0, 6.41498 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -470.846, 0, 6.41498 )
 
 [node name="FirstBattalion" type="Spatial" parent="Enemies"]
-transform = Transform( 0.67309, 0, 0.739561, 0, 1, 0, -0.739561, 0, 0.67309, 301.678, 1.52588e-05, 329.113 )
+transform = Transform( 0.67309, 0, 0.739561, 0, 1, 0, -0.739561, 0, 0.67309, 297.064, 1.52588e-05, 351.761 )
 
 [node name="Enemy" parent="Enemies/FirstBattalion" instance=ExtResource( 4 )]
 transform = Transform( 0.913418, 0, 0.407024, 0, 1, 0, -0.407024, 0, 0.913418, 4.65027, 2.28882e-05, -6.90552 )

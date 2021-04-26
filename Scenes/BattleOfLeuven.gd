@@ -6,6 +6,7 @@ var total_enemies = 0
 var total_living_enemies = 0
 
 func _ready():
+	$Player/UI.show_message("Objective\nFree all prisoners!")
 	total_enemies = 0
 	for battalion in $Enemies.get_children():
 		total_enemies += battalion.get_child_count()

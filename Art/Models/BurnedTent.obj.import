@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/BurnedTent.obj-58b03aa2ad175dadc6d37a5d09546776.mesh"
+
+[deps]
+
+files=[ "res://.import/BurnedTent.obj-58b03aa2ad175dadc6d37a5d09546776.mesh" ]
+
+source_file="res://Art/Models/BurnedTent.obj"
+dest_files=[ "res://.import/BurnedTent.obj-58b03aa2ad175dadc6d37a5d09546776.mesh", "res://.import/BurnedTent.obj-58b03aa2ad175dadc6d37a5d09546776.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
