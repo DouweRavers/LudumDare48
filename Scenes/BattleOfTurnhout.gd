@@ -26,7 +26,7 @@ func _on_Timer_timeout():
 		for tent in tent_division.get_children():
 			if tent.burned:
 				total_burned_tents += 1
-	if total_burned_tents == total_tents:
+	if total_burned_tents >= total_tents && $wintimer.is_stopped():
 		$Player/UI.show_message("Wow! All of them? dahmmm..")
 		$wintimer.start()
 
